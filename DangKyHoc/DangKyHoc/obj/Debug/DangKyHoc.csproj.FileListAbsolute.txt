@@ -9,3 +9,15 @@ E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.GenerateResource.
 E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.CoreCompileInputs.cache
 E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.exe
 E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.pdb
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\bin\Debug\DangKyHoc.exe.config
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\bin\Debug\DangKyHoc.exe
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\bin\Debug\DangKyHoc.pdb
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.AssemblyReference.cache
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.SuggestedBindingRedirects.cache
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.AddSubject.resources
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.Form1.resources
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.Properties.Resources.resources
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.GenerateResource.cache
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.CoreCompileInputs.cache
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.exe
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.pdb

@@ -17,6 +17,13 @@ namespace DangKyHoc
         public Form1()
         {
             InitializeComponent();
+            openAddSubjectForm();
+        }
+
+        public void openAddSubjectForm()
+        {
+            var addSubject = new AddSubject();
+            addSubject.ShowDialog();
         }
     }
 }
