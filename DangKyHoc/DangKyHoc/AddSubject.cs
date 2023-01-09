@@ -69,6 +69,11 @@ namespace DangKyHoc
             var subName = dataGridView.Rows[e.RowIndex].Cells[1].Value;
             var subNum = dataGridView.Rows[e.RowIndex].Cells[2].Value;
             var subFactor = dataGridView.Rows[e.RowIndex].Cells[3].Value;
+
+            txtSubNum.Text = subNum.ToString();
+            txtSubName.Text = subName.ToString();
+            txtSubCode.Text = subCode.ToString();
+            txtSubFactor.Text = subFactor.ToString();
         }
 
         private bool checkEmptyString(string subCode, string subName, string subNum , string subFactor)
@@ -88,13 +93,121 @@ namespace DangKyHoc
             return false;
         }
 
-        private bool isNumberOrNot(string subNum)
+        private bool isIntNumber(string subNum)
         {
-            return isNumber().
+            int number;
+            return int.TryParse(subNum, out number);
+        }
+        private bool isDoubleNumber(string subFactor)
+        {
+            int number;
+            double number1;
+            return int.TryParse(subFactor, out number) || double.TryParse(subFactor,out number1);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            string subCode = txtSubCode.Text;
+            string subName = txtSubName.Text;
+            string subNum = txtSubNum.Text;
+            string subFactor = txtSubFactor.Text;
+
+            if (checkEmptyString(subCode, subName, subNum, subFactor)){
+                MessageBox.Show("Hãy nhập đầy đủ thông tin", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if (checkExistSubCode(subCode)){
+                MessageBox.Show("Thông tin đã tồn tại", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if (!isIntNumber(subNum))
+            {
+                MessageBox.Show("Số tín phải là một số nguyên", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if(!isDoubleNumber(subFactor)){
+                MessageBox.Show("Hệ số phải là một số ", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if(subCode.Length != 5)
+            {
+                MessageBox.Show("Mã môn học phải dài 5 kí tự", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                connection.Open();
+                var cmd = new SqlCommand();
+                cmd.CommandText = $"Insert Into Subjects (subCode, subName, subNum, subFactor) values ('{subCode}', '{subName}' , {subNum} , {subFactor})";
+                cmd.Connection = connection;
+
+                var rowAffects = cmd.ExecuteNonQuery();
+
+                if (rowAffects <= 0)
+                {
+                    MessageBox.Show("Có lỗi xảy ra", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                connection.Close();
+                fillDataInTable("Subjects");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string subCode = txtSubCode.Text;
+            string subName = txtSubName.Text;
+            string subNum = txtSubNum.Text;
+            string subFactor = txtSubFactor.Text;
+
+            if (checkEmptyString(subCode, subName, subNum, subFactor))
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                connection.Open();
+                var cmd = new SqlCommand();
+                cmd.CommandText = $"Update Subjects Set subName = '{subName}', subNum = '{subNum}' , subFactor = '{subFactor}' Where subCode = '{subCode}'";
+                cmd.Connection = connection;
+
+                var rowAffects = cmd.ExecuteNonQuery();
+
+                if (rowAffects <= 0)
+                {
+                    MessageBox.Show("Có lỗi xảy ra", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                connection.Close();
+                fillDataInTable("Subjects");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            string subCode = txtSubCode.Text;
+            string subName = txtSubName.Text;
+            string subNum = txtSubNum.Text;
+            string subFactor = txtSubFactor.Text;
+
+            if (checkEmptyString(subCode, subName, subNum, subFactor))
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                connection.Open();
+                var cmd = new SqlCommand();
+                cmd.CommandText = $"Delete From Subjects Where subCode = '{subCode}'";
+                cmd.Connection = connection;
+
+                var rowAffects = cmd.ExecuteNonQuery();
+
+                if (rowAffects <= 0)
+                {
+                    MessageBox.Show("Có lỗi xảy ra", "Subject Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+                connection.Close();
+                fillDataInTable("Subjects");
+
+                txtSubName.Text = "";
+                txtSubCode.Text = "";
+                txtSubFactor.Text = "";
+                txtSubNum.Text = "";
+            }
         }
     }
 }
