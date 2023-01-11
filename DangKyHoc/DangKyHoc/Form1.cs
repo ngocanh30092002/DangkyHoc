@@ -17,6 +17,7 @@ namespace DangKyHoc
     {
         List<User> users = new List<User>();
         bool isValid = false;
+        public const double tuitionFee = 440000;
 
         private SqlConnectionStringBuilder conStr;
         private SqlConnection connection;
@@ -25,7 +26,8 @@ namespace DangKyHoc
         public Form1()
         {
             InitializeComponent();
-            openAddSubjectForm();
+            //openAddSubjectForm();
+            openAddStudentTerm();
             ConnectionDataBase();
         }
 
@@ -44,7 +46,11 @@ namespace DangKyHoc
             var addSubject = new AddSubject();
             addSubject.ShowDialog();
         }
-
+        public void openAddStudentTerm()
+        {
+            var addStudentTerm = new AddStudentTerm();
+            addStudentTerm.ShowDialog();
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 

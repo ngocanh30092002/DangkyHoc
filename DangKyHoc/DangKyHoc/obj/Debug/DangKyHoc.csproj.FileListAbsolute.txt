@@ -21,3 +21,5 @@ E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.Generat
 E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.csproj.CoreCompileInputs.cache
 E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.exe
 E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.pdb
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.AddStudentTerm.resources
+E:\TaiLieu\HTTT\DangKyHoc\DangKyHoc\DangKyHoc\obj\Debug\DangKyHoc.Summary.resources
